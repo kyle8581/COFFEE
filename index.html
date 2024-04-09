@@ -64,6 +64,9 @@
           <a class="navbar-item" href="https://huggingface.co/papers/2404.02575">
             <b>Language Models as Compilers</b> <p style="font-size:18px; display: inline; margin-left: 5px;">🔥</p>
           </a>
+          <a class="navbar-item" href="https://arxiv.org/abs/2402.18374">
+            <b>VerifiNER</b> <p style="font-size:18px; display: inline; margin-left: 5px;">✅</p>
+          </a>
         </div>
       </div>
     </div>
@@ -129,7 +132,7 @@
 
           <br>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">*Core Contributors</span><br>
+            <span class="author-block">*Equal contribution</span><br>
             <span class="author-block">†Corresponding to:</span>
             <!-- <span class="author-block"><a href="mailto:lune-blue@yonsei.ac.kr">lune-blue@yonsei.ac.kr</a>,</span> -->
             <span class="author-block"><a href="mailto:mapoout@yonsei.ac.kr">mapoout@yonsei.ac.kr</a>,</span>
@@ -279,7 +282,7 @@
   <div class="container is-max-desktop">
         <div class="content has-text-centered">
           <img src="static/images/figure1.svg" alt="geometric reasoning" width="95%"/>
-          <p> (Left) A motivating example of code editing with natural language feedback. With appropriate feedback, the editor model can produce a correct editing with the help of the feedback. (Rigth) On evaluating CoffeePots on HumanEvalFix, we show our approach outperforms GPT-4. </p>
+          <p> (Left) A motivating example of code editing with natural language feedback. With appropriate feedback, the editor model can produce a correct editing with the help of the feedback. (Rigth) By evaluating CoffeePots on HumanEvalFix, a benchmark that aims to assess code editing abilities, we show <b>our approach outperforms GPT-4</b>. </p>
         </div>
       <!-- </div> -->
     </div>
@@ -326,7 +329,7 @@
         <h2 class="title is-3">Introduction</h2>
         <div class="content has-text-justified">
           <p>
-            Code editing is an essential step towards reliable program synthesis to automatically correct critical errors generated from code LLMs. Recent studies have demonstrated that closed-source LLMs (i.e., ChatGPT and GPT-4) are capable of generating corrective feedback to edit erroneous inputs. However, it remains challenging for open-source code LLMs to generate feedback for code editing, since these models tend to adhere to the superficial formats of feedback and provide feedback with misleading information. Hence, the focus of our work is to <b>leverage open-source code LLMs to generate helpful feedback with correct guidance for code editing</b>. To this end, we present Coffee, a collected dataset specifically designed for code fixing with feedback. Using this dataset, we construct CoffeePots, a framework for COde Fixing with FEEdback via Preference-Optimized Tuning and Selection. The proposed framework aims to automatically generate helpful feedback for code editing while minimizing the potential risk of superficial feedback. The combination of Coffee and CoffeePots marks a significant advancement, achieving state-of-the-art performance on HumanEvalFix benchmark. 
+            Code editing is an essential step towards reliable program synthesis to automatically correct critical errors generated from code LLMs. Recent studies have demonstrated that closed-source LLMs (i.e., ChatGPT and GPT-4) are capable of generating corrective feedback to edit erroneous inputs. However, it remains challenging for open-source code LLMs to generate feedback for code editing, since these models tend to adhere to the superficial formats of feedback and provide feedback with misleading information. Hence, the focus of our work is to <b>leverage open-source code LLMs to generate helpful feedback with correct guidance for code editing</b>. To this end, we present Coffee, a collected dataset specifically designed for code fixing with feedback. Using this dataset, we construct CoffeePots, a framework for COde Fixing with FEEdback via Preference-Optimized Tuning and Selection. The proposed framework aims to automatically generate helpful feedback for code editing while minimizing the potential risk of superficial feedback. The combination of Coffee and CoffeePots marks a significant advancement, <b>achieving state-of-the-art performance on HumanEvalFix benchmark</b>. 
           </p>
         </div>
       </div>
@@ -372,25 +375,7 @@
     </div>
     </div>
 
-    <div class="columns is-centered has-text-centered">
-      <!-- <div class="column is-full-width has-text-centered"> -->
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Code-Feedback</h2>
-        <div class="content has-text-justified">
-          <p>
-          In the development of Code-Feedback, we meticulously crafted our dataset, known as Code-Feedback, to train the OpenCodeInterpreter, with a focus on specific criteria that ensure the dataset's effectiveness and relevance to real-world coding challenges. Code-Feedback is distinguished by its inclusion of diverse and challenging queries derived from actual coding tasks. This diversity is crucial, as it ensures that the dataset covers a broad spectrum of problems, providing both variety and complexity. Moreover, the dataset adopts a multi-turn dialogue structure, enhancing its utility by incorporating execution feedback, such as outputs and diagnostics from compilers, alongside human feedback, which includes additional guidance or instructions from users. This structure is pivotal in simulating real-world coding scenarios where iterative feedback and adjustments are common.
-          </p>
-          <p> 
-          The creation of Code-Feedback involved a comprehensive approach, employing five distinct methods to gather and curate data. This multifaceted approach was designed to fulfill the dataset's three key criteria: the incorporation of diverse real-world queries, a structured multi-turn dialogue format, and the interleaving of text and code responses to offer a comprehensive solution to coding queries. The sources of our queries were twofold, comprising a variety of open-source datasets and coding challenges from platforms like LeetCode. This combination ensures a rich and varied dataset that accurately reflects the nature of coding tasks encountered by developers. In subsequent sections, we delve into the specific methods employed in constructing the dataset, illustrating our commitment to creating a robust and effective tool for coding instruction and feedback.
-        </p>
-        <div class="content has-text-centered">
-          <img src="static/images/coffeepots.svg" alt="algebraic reasoning" class="center">
-          <p> Summary of our proposed dataset OpenCodeInterpreter construction and comparison with existing code instruction tuning datasets. M.T: Multi Turn, E.F: Execute Feedback, H.F: Human Feedback.</p>
-        </div>
-          
-          
-        </div>
-    </div>
+   
     </div>
 
 
@@ -403,6 +388,46 @@
   </div>
 </section>
 
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 mmmu">
+    <img src="static/images/coffeepot_emoji.png" style="width:1em;vertical-align: middle" alt="Logo"/>
+    <span class="mmmu" style="vertical-align: middle"> COFFEEPOTS: Aligning Feedback
+with Preferred Edits
+       </span>
+  </h1>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Is Training on COFFEE with Supervised Finetuning Enough?</h2>
+
+        <div class="container is-max-desktop">
+        <div class="content has-text-centered">
+          <img src="static/images/pass_ratio.png" alt="algebraic reasoning"  width="50%"/>
+          <p> Comparison </p>
+        </div>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+           <b>No.</b> As we show in the figure above, editing code with feedback from SFT critic shows performance even worse than direct editing (i.e., editing w/o feedback).
+          </p>
+
+          <p>
+            To further enhance the capabilities of pre-trained code models, instruction-tuning methods have been introduced. Among these, OpenCodeInterpreter stands out as a pioneering approach, leveraging a unique dataset named Code-Feedback. This dataset comprises 68K multi-turn interactions that include both user instructions and compiler feedback, enabling the model to not only generate but also refine code based on execution outputs and human guidance. Such advancements allow OpenCodeInterpreter to produce solutions that are not only technically sound but also closely aligned with user expectations, setting a new standard in code generation. 
+          </p>
+          <p>
+            OpenCodeInterpreter's innovative integration of execution and human feedback marks a significant leap forward in the domain. By harnessing compiler diagnostics to correct errors and incorporating human insights for code refinement, OpenCodeInterpreter achieves an unparalleled balance of accuracy and user alignment. Its performance on widely recognized benchmarks, including HumanEval and MBPP, demonstrates its superior ability to iteratively refine code, achieving results that narrow the performance gap with proprietary systems like GPT-4's Code Interpreter. OpenCodeInterpreter thus heralds a new era in code generation, offering open-source systems that rival the sophistication and efficacy of their proprietary counterparts.          
+          </p>
+        </div>
+    </div>
+    </div>
+
+   
+    </div>
 <!-- RESULTS SECTION -->
 <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">
