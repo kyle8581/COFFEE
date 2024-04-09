@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table, th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+</style>
+</head>
+<body>
+
+<h2>Comparison Table</h2>
+
+<table>
+  <tr>
+    <th>Method</th>
+    <th>HumanEval</th>
+    <th>Synthesize</th>
+    <th>MBPP</th>
+    <th>APPS</th>
+    <th>Introductory Interview</th>
+    <th>Competition</th>
+  </tr>
+  <tr>
+    <td>Code generation w/o editing (ChatGPT)</td>
+    <td>67.6</td>
+    <td>49.0</td>
+    <td>48.4</td>
+    <td>21.0</td>
+    <td>5.7</td>
+    <td>---</td>
+  </tr>
+  <tr>
+    <td>Editing with closed-source LLM: ChatGPT</td>
+    <td>74.3 (20.7%)</td>
+    <td>52.4 (6.7%)</td>
+    <td>51.9 (6.8%)</td>
+    <td>22.6 (2.0%)</td>
+    <td>6.0 (0.3%)</td>
+    <td>---</td>
+  </tr>
+  <tr>
+    <td>+ Self-Debug (ChatGPT)</td>
+    <td>72.5 (15.1%)</td>
+    <td>51.2 (4.3%)</td>
+    <td>50.6 (4.3%)</td>
+    <td>22.2 (1.5%)</td>
+    <td>6.9 (1.3%)</td>
+    <td>---</td>
+  </tr>
+  <tr>
+    <td>+ Self-Refine (ChatGPT)</td>
+    <td>72.5 (15.1%)</td>
+    <td>50.4 (2.7%)</td>
+    <td>49.1 (1.4%)</td>
+    <td>21.4 (0.5%)</td>
+    <td>5.9 (0.2%)</td>
+    <td>---</td>
+  </tr>
+  <tr>
+    <td>Editing with open-source LLM: OctoCoder (16B)</td>
+    <td>68.2 (1.9%)</td>
+    <td>49.6 (1.2%)</td>
+    <td>48.4 (0.0%)</td>
+    <td>21.1 (0.1%)</td>
+    <td>5.7 (0.0%)</td>
+    <td>---</td>
+  </tr>
+  <tr>
+    <td>StarCoder (16B)</td>
+    <td>67.6 (0.0%)</td>
+    <td>49.0 (0.0%)</td>
+    <td>48.4 (0.0%)</td>
+    <td>21.0 (0.0%)</td>
+    <td>5.7 (0.0%)</td>
+    <td>---</td>
+  </tr>
+  <tr>
+    <td>WizardCoder (16B)</td>
+    <td>69.5 (5.9%)</td>
+    <td>49.8 (1.6%)</td>
+    <td>48.4 (0.0%)</td>
+    <td>21.1 (0.1%)</td>
+    <td>5.7 (0.0%)</td>
+    <td>---</td>
+  </tr>
+  <tr>
+    <td>Code Llama (7B)</td>
+    <td>70.1 (7.7%)</td>
+    <td>49.4 (0.8%)</td>
+    <td>48.4 (0.0%)</td>
+    <td>21.1 (0.1%)</td>
+    <td>5.7 (0.0%)</td>
+    <td>---</td>
+  </tr>
+  <tr>
+    <td>Code Llama (13B)</td>
+    <td>71.9 (13.3%)</td>
+    <td>49.4 (0.8%)</td>
+    <td>48.5 (0.2%)</td>
+    <td>21.1 (0.1%)</td>
+    <td>5.7 (0.0%)</td>
+    <td>---</td>
+  </tr>
+  <tr>
+    <td>Self-Debug (Code Llama 13B)</td>
+    <td>70.7 (9.6%)</td>
+    <td>50.0 (2.0%)</td>
+    <td>48.5 (0.2%)</td>
+    <td>21.0 (0.0%)</td>
+    <td>5.7 (0.0%)</td>
+    <td>---</td>
+  </tr>
+  <tr>
+    <td>Self-Refine (Code Llama 13B)</td>
+    <td>73.7 (18.8%)</td>
+    <td>50.6 (3.1%)</td>
+    <td>48.6 (0.4%)</td>
+    <td>21.5 (0.6%)</td>
+    <td>5.8 (0.1%)</td>
+    <td>---</td>
+  </tr>
+  <tr>
+    <td>COFFEEPOTS (7B)</td>
+    <td>75.0 (22.8%)</td>
+    <td>52.8 (7.5%)</td>
+    <td>49.3 (1.7%)</td>
+    <td>21.8 (1.0%)</td>
+    <td>6.4 (0.7%)</td>
+    <td>---</td>
+  </tr>
+</table>
+
+</body>
+</html>
