@@ -203,16 +203,15 @@
               </span>
 
               <!-- Twitter Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://twitter.com/GeZhang86038849/status/1760848526592901426"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon has-text-white">
                     <i class="fa-brands fa-x-twitter"></i>
-                      <!-- <p style="font-size:18px">🌐</p> -->
                   </span>
                   <span>Twitter</span>
                 </a>
-              </span>
+              </span> -->
             </div>
           
             <!-- Second Line -->
@@ -280,7 +279,7 @@
   <div class="container is-max-desktop">
         <div class="content has-text-centered">
           <img src="static/images/figure1.svg" alt="geometric reasoning" width="100%"/>
-          <p> A motivating example of code editing with natural language feedback. With appropriate feedback, OpenCodeInterpreter-DS-33B achieves performance comparable to that of the GPT-4 Code Interpreter. </p>
+          <p> (Left) A motivating example of code editing with natural language feedback. With appropriate feedback, the editor model can produce a correct editing with the help of the feedback. (Rigth) On evaluating CoffeePots on HumanEvalFix, we show our approach outperforms GPT-4. </p>
         </div>
       <!-- </div> -->
     </div>
@@ -294,11 +293,17 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">🔔News</h2>
         <div class="content has-text-justified">
-          <p>
+          <!-- <p>
             <b>🏆[2024-03-13]: Our 33B model has claimed the top spot on the <a href="https://huggingface.co/spaces/bigcode/bigcode-models-leaderboard">BigCode leaderboard</a>!</b>
           </p>
           <p>
             <b>🛠️[2024-02-29]: Our official online demo is deployed on HuggingFace Spaces! Take a look at <a href="https://huggingface.co/spaces/m-a-p/OpenCodeInterpreter_demo">Demo Page</a>!</b>
+          </p> -->
+          
+          <p>
+            <b>
+              ♻ [2024-02-21]: We have updated our paper and released the second version of our draft on Arxiv!</b>
+            </b>
           </p>
           <p>
             <b>
@@ -321,7 +326,7 @@
         <h2 class="title is-3">Introduction</h2>
         <div class="content has-text-justified">
           <p>
-            Code editing is an essential step towards reliable program synthesis to automatically correct critical errors generated from code LLMs. Recent studies have demonstrated that closed-source LLMs (i.e., ChatGPT and GPT-4) are capable of generating corrective feedback to edit erroneous inputs. However, it remains challenging for open-source code LLMs to generate feedback for code editing, since these models tend to adhere to the superficial formats of feedback and provide feedback with misleading information. Hence, the focus of our work is to leverage open-source code LLMs to generate helpful feedback with correct guidance for code editing. To this end, we present Coffee, a collected dataset specifically designed for code fixing with feedback. Using this dataset, we construct CoffeePots, a framework for COde Fixing with FEEdback via Preference-Optimized Tuning and Selection. The proposed framework aims to automatically generate helpful feedback for code editing while minimizing the potential risk of superficial feedback. The combination of Coffee and CoffeePots marks a significant advancement, achieving state-of-the-art performance on HumanEvalFix benchmark. 
+            Code editing is an essential step towards reliable program synthesis to automatically correct critical errors generated from code LLMs. Recent studies have demonstrated that closed-source LLMs (i.e., ChatGPT and GPT-4) are capable of generating corrective feedback to edit erroneous inputs. However, it remains challenging for open-source code LLMs to generate feedback for code editing, since these models tend to adhere to the superficial formats of feedback and provide feedback with misleading information. Hence, the focus of our work is to <b>leverage open-source code LLMs to generate helpful feedback with correct guidance for code editing</b>. To this end, we present Coffee, a collected dataset specifically designed for code fixing with feedback. Using this dataset, we construct CoffeePots, a framework for COde Fixing with FEEdback via Preference-Optimized Tuning and Selection. The proposed framework aims to automatically generate helpful feedback for code editing while minimizing the potential risk of superficial feedback. The combination of Coffee and CoffeePots marks a significant advancement, achieving state-of-the-art performance on HumanEvalFix benchmark. 
           </p>
         </div>
       </div>
