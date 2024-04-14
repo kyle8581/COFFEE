@@ -282,7 +282,7 @@
   <div class="container is-max-desktop">
         <div class="content has-text-centered">
           <img src="static/images/figure1.svg" alt="geometric reasoning" width="95%"/>
-          <p> (Left) A motivating example of code editing with natural language feedback. With appropriate feedback, the editor model can produce a correct editing with the help of the feedback. (Rigth) By evaluating CoffeePots on HumanEvalFix, a benchmark that aims to assess code editing abilities, we show <b>our approach outperforms GPT-4</b>. </p>
+          <p> (Left) A motivating example of code editing with natural language feedback. With appropriate feedback, the editor model can produce a correct editing with the help of the feedback. (Right) By evaluating CoffeePots on HumanEvalFix, a benchmark that aims to assess code editing abilities, we show <b>our approach outperforms GPT-4</b>. </p>
         </div>
       <!-- </div> -->
     </div>
@@ -362,20 +362,20 @@
         </div>
         <div class="content has-text-justified">
           <p>
-            Code generation has long been a cornerstone challenge in computer science, evolving significantly over the years from its initial reliance on symbolic methods to the recent revolutionary impact of large language models (LLMs). These LLMs, pre-trained on vast code corpora, have dramatically advanced the field by generating code that closely aligns with user intents, thereby offering substantial support for software development. As these models continue to evolve, they have become integral tools in automating and enhancing the coding process, exemplified by innovations such as GitHub Copilot. 
+            Recent large language models have demonstrated promising capabilities in correcting their codes based on natural language feedback. However, this ability is currently only applicable to open-source models (e.g., GPT-3.5-Turbo and GPT-4), and <b>not to closed-source models</b>. This poses a significant safety and privacy concern as the codes cannot be uploaded to any external servers.
           </p>
 
           <p>
-            To further enhance the capabilities of pre-trained code models, instruction-tuning methods have been introduced. Among these, OpenCodeInterpreter stands out as a pioneering approach, leveraging a unique dataset named Code-Feedback. This dataset comprises 68K multi-turn interactions that include both user instructions and compiler feedback, enabling the model to not only generate but also refine code based on execution outputs and human guidance. Such advancements allow OpenCodeInterpreter to produce solutions that are not only technically sound but also closely aligned with user expectations, setting a new standard in code generation. 
+            To this end, we introduce ☕COFFEE, a dataset for <b>code editing with feedback</b>. 
+            Our dataset includes diverse solutions to programming problems collected from an online competitive programming platform. For each solution, we additionally annotate natural language feedback to provide detailed explanations for the errors towards correct edits, and augment synthetic test cases to measure the correctness of the edited solutions.
           </p>
-          <p>
+          <!-- <p>
             OpenCodeInterpreter's innovative integration of execution and human feedback marks a significant leap forward in the domain. By harnessing compiler diagnostics to correct errors and incorporating human insights for code refinement, OpenCodeInterpreter achieves an unparalleled balance of accuracy and user alignment. Its performance on widely recognized benchmarks, including HumanEval and MBPP, demonstrates its superior ability to iteratively refine code, achieving results that narrow the performance gap with proprietary systems like GPT-4's Code Interpreter. OpenCodeInterpreter thus heralds a new era in code generation, offering open-source systems that rival the sophistication and efficacy of their proprietary counterparts.          
-          </p>
+          </p> -->
         </div>
     </div>
     </div>
 
-   
     </div>
 
 
@@ -407,27 +407,33 @@ with Preferred Edits
 
         <div class="container is-max-desktop">
         <div class="content has-text-centered">
-          <img src="static/images/pass_ratio.png" alt="algebraic reasoning"  width="50%"/>
-          <p> Comparison </p>
+          <img src="static/images/pass_ratio.svg" alt="algebraic reasoning"  width="70%"/>
+          <p>  Pass@1 results of code editing with SFT feedback on the test set of COFFEE compared with editing with ChatGPT feedback and editing without any feedback settings.</p>
         </div>
+      <br/>
         </div>
         <div class="content has-text-justified">
           <p>
-           <b>No.</b> As we show in the figure above, editing code with feedback from SFT critic shows performance even worse than direct editing (i.e., editing w/o feedback).
+           <b>No.</b> As we show in the figure above, we find that training a critic model that generates natural language feedback on a given erroneous code with next token prediction obejct cannot produce any helpful deedback. Editing code with feedback from SFT critic shows performance even worse than direct editing (i.e., editing w/o feedback).
           </p>
-
+          <br/>
+          <div class="content has-text-centered">
+            <img src="static/images/feedback_quality_analysis.svg" alt="algebraic reasoning"  width="95%"/>
+            <p>Human evaluation on the quality of feedback from SFT critic. </p>
+          </div>
           <p>
-            To further enhance the capabilities of pre-trained code models, instruction-tuning methods have been introduced. Among these, OpenCodeInterpreter stands out as a pioneering approach, leveraging a unique dataset named Code-Feedback. This dataset comprises 68K multi-turn interactions that include both user instructions and compiler feedback, enabling the model to not only generate but also refine code based on execution outputs and human guidance. Such advancements allow OpenCodeInterpreter to produce solutions that are not only technically sound but also closely aligned with user expectations, setting a new standard in code generation. 
+            Further analysis of the feedback quality suggests that the feedback from the SFT-trained critic has not yet reached a satisfactory level. It remains only as 'Partially Correct' feedback.
           </p>
-          <p>
+          <!-- <p>
             OpenCodeInterpreter's innovative integration of execution and human feedback marks a significant leap forward in the domain. By harnessing compiler diagnostics to correct errors and incorporating human insights for code refinement, OpenCodeInterpreter achieves an unparalleled balance of accuracy and user alignment. Its performance on widely recognized benchmarks, including HumanEval and MBPP, demonstrates its superior ability to iteratively refine code, achieving results that narrow the performance gap with proprietary systems like GPT-4's Code Interpreter. OpenCodeInterpreter thus heralds a new era in code generation, offering open-source systems that rival the sophistication and efficacy of their proprietary counterparts.          
-          </p>
+          </p> -->
         </div>
     </div>
     </div>
 
    
     </div>
+</section>
 <!-- RESULTS SECTION -->
 <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">
