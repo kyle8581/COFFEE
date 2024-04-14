@@ -414,20 +414,33 @@ with Preferred Edits
         </div>
         <div class="content has-text-justified">
           <p>
-           <b>No.</b> As we show in the figure above, we find that training a critic model that generates natural language feedback on a given erroneous code with next token prediction obejct cannot produce any helpful deedback. Editing code with feedback from SFT critic shows performance even worse than direct editing (i.e., editing w/o feedback).
+           <b><h5>No.</h5></b> As we show in the figure above, we find that training a critic model that generates natural language feedback on a given erroneous code with next token prediction obejct cannot produce any helpful deedback. Editing code with feedback from SFT critic shows performance even worse than direct editing (i.e., editing w/o feedback).
           </p>
           <br/>
           <div class="content has-text-centered">
-            <img src="static/images/feedback_quality_analysis.svg" alt="algebraic reasoning"  width="95%"/>
+            <img src="static/images/feedback_quality_analysis.svg" alt="algebraic reasoning"  width="100%"/>
             <p>Human evaluation on the quality of feedback from SFT critic. </p>
           </div>
           <p>
-            Further analysis of the feedback quality suggests that the feedback from the SFT-trained critic has not yet reached a satisfactory level. It remains only as 'Partially Correct' feedback.
+            Further analysis of the feedback quality suggests that the feedback from the SFT-trained critic has not yet reached a satisfactory level. It remains only as 'Partially Correct' feedback, resulting the decreased performance in code editing.
           </p>
           <!-- <p>
             OpenCodeInterpreter's innovative integration of execution and human feedback marks a significant leap forward in the domain. By harnessing compiler diagnostics to correct errors and incorporating human insights for code refinement, OpenCodeInterpreter achieves an unparalleled balance of accuracy and user alignment. Its performance on widely recognized benchmarks, including HumanEval and MBPP, demonstrates its superior ability to iteratively refine code, achieving results that narrow the performance gap with proprietary systems like GPT-4's Code Interpreter. OpenCodeInterpreter thus heralds a new era in code generation, offering open-source systems that rival the sophistication and efficacy of their proprietary counterparts.          
           </p> -->
         </div>
+
+          <br/>
+          <div class="content has-text-centered">
+            <img src="static/images/coffeepots.svg" alt="algebraic reasoning"  width="100%"/>
+            <p>Overview of COFFEEPOTs. </p>
+          </div>
+
+        <div class="content has-text-justified">
+        <p>
+          To resolve the aforementioned issue, we introduce COFFEEPOTS, a framework for COde Fixing with FEEdback via Preference-Optimized Tuning and Selection. We first use our COFFEE dataset to train code LLMs via supervised fine-tuning (SFT) for feedbackaugmented code editing. We then conduct a preliminary study on the effect of feedback on code editing, demonstrating the need for helpful feedback that correctly addresses critical errors. Finally, we additionally leverage synthetic test cases in COFFEE to annotate preferred (i.e., helpful) solutions and apply preference alignment to guide the generation of helpful feedback. 
+        </p>
+        </div>
+
     </div>
     </div>
 
