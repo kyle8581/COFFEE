@@ -431,7 +431,7 @@ with Preferred Edits
             <p>Human evaluation on the quality of feedback from SFT critic. </p>
           </div>
           <p>
-            Further analysis of the feedback quality suggests that the feedback from the SFT-trained critic has not yet reached a satisfactory level. It remains only as 'Partially Correct' feedback, resulting the decreased performance in code editing as we show in the previous
+            Further analysis of the feedback quality suggests that the feedback from the SFT-trained critic has not yet reached a satisfactory level. It remains only as <b>'Partially Correct'</b> feedback, resulting the decreased performance in code editing as we show in the previous
              analysis.
           </p>
           <!-- <p>
@@ -471,18 +471,20 @@ with Preferred Edits
         <div class="column is-full has-text-centered content">
           <!-- <h2 class="title is-3" id="leaderboard"></h2> -->
           <div class="content">
-            <div class="content has-text-justified">
-              <p>
-                This section outlines the experimental framework for evaluating the performance of OpenCodeInterpreter and its comparison with leading models in both single-turn and multi-turn code generation settings. The study leverages data from the EvalPlus leaderboard, examining OpenCodeInterpreter's performance against benchmarks such as GPT-3.5/4-Turbo, CodeLlama-Python, WizardCoder, Deepseek-Coder, and CodeT5+ across various scales on the HumanEval and MBPP benchmarks and their advanced versions. For multi-turn code generation, the focus shifts to assessing OpenCodeInterpreter's capability in iterative refinement through a two-round limit, considering execution feedback and human feedback scenarios. The experimental setup aims to highlight OpenCodeInterpreter's adaptability and proficiency in code generation, underscored by its achievements in setting new standards in software development tools through iterative feedback and refinement. 
-
-              </p>
-            </div>
 
           <div class="content has-text-centered">
             <img src="static/images/main_table.svg" alt="algebraic reasoning"  width="100%"/>
             <p>Performances in editing machine-generated codes. We report pass@1 and ERR (in parentheses). We use
 ChatGPT (the first row) to generate codes for problems from several benchmark datasets for code generation.</p>
           </div>
+
+            <div class="content has-text-justified">
+              <p>
+                Table above reports the model performance in editing solutions generated from ChatGPT for problems in HumanEvalSynthesize, MBPP, and APPS. CoffeePots outperforms all open-source baselines, including Code Llama (13B), the previous SOTA among open-source code LLMs. Furthermore, CoffeePots shows better results than feedback-augmented Code Llama (13B), i.e., prompted with Self-Refine and Self-Debug, suggesting the effectiveness of our strategy on generating feedback.
+In addition, while some open-source code LLMs show almost no improvement in MBPP and APPS (i.e., 0% ERR), CoffeePots shows moderate improvements on these benchmarks (i.e., up to 7.5% ERR).
+Compared to closed-source baselines (i.e., ChatGPT), CoffeePots achieves competitive results particularly on HumanEvalSynthesize and MBPP, showing that our framework can serve as a strong alternative to closed-source LLMs while being publicly available and much smaller in size. 
+              </p>
+            </div>
             <!-- <button id="toggleButton" onclick="changeButtonText()"><b style='font-size: larger;'>Validation Set Leaderboard</b> (Click to Switch)</button> -->
             <!-- <b style='font-size: larger;'>
               Pass rate of different code models on HumanEval (+), MBPP (+) and their average (+). 
